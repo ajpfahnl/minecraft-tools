@@ -1,0 +1,3 @@
+TOKEN-SUDO-MINECRAFT=<your bot token>
+SERVER-DIRECTORY=~/my_minecraft_server
+COMMUNICATION-CHANNEL=minecraft-bot
