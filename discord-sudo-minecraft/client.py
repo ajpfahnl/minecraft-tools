@@ -30,7 +30,7 @@ class SudoMinecraftClient(discord.Client):
             raise RuntimeError(f"Channel `{COMMUNICATION_CHANNEL}` does not exist")
 
     def format_options(self, options):
-        string = ["__**Help**__", "Source code can be found at https://github.com/ajpfahnl/minecraft-tools/tree/main/discord-sudo-minecraft"]
+        string = ["__**Help**__", "Source code can be found at <https://github.com/ajpfahnl/minecraft-tools/tree/main/discord-sudo-minecraft>"]
         for l, help_str in options.values():
             cmd_str = "` | `".join(l)
             cmd_str = "".join(["`", cmd_str, "`"])
