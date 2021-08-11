@@ -5,7 +5,7 @@
 This bot was tested with Python 3.9.5.
 
 ## Using the Bot
-When the bot logs into a Discord server, it greets the server in the default channel set in the `.env` file. Typing `$help$` in the channel will provide all the options currently supported by the bot.
+When the bot logs into a Discord server, it greets the server in the default channel set in the `.env` file. Typing `$help` in the channel will provide all the options currently supported by the bot.
 
 <img src="images/greet-and-help.png" width="500">
 
