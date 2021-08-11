@@ -4,5 +4,5 @@ This repo contains programs and scripts that are meant to be used in conjunction
 
 List of projects:
 
- * `discord-sudo-minecraft`: Discord bot that allows users to start, stop, modify and more with a Minecraft server.
+ * [Discord bot `sudo-minecraft`](./discord-sudo-minecraft): Discord bot that allows users to start, stop, modify and more with a Minecraft server.
  * ...[more to come]

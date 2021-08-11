@@ -1,4 +1,4 @@
-# `discord-sudo-minecraft`
+# Discord bot `sudo-minecraft`
 
 `sudo-minecraft` is a Discord bot that allows for full control of a Minecraft server via Discord. This bot allows for a user to start, stop, message, and change the server's settings. This bot was primarily written in Python3 with heavy use of the `discord.py` API and the `asyncio` asynchronous I/O library.
 
