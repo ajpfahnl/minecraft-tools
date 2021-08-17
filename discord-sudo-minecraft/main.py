@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from globals import *
 from minecraft_server import MinecraftServerAdmin as MCSA
 from client import SudoMinecraftClient
