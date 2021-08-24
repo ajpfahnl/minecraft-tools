@@ -21,6 +21,7 @@ First let's set up some of our environment variables.
  * Copy the `.envTEMPLATE` file to `.env`.
  * Change the value of `SERVER-DIRECTORY` to the directory containing your `server.jar` server file.
  * Change the value of `COMMUNICATION-CHANNEL` to the default channel you'd like the bot to send messages in.
+ * Change the value of `BACKUP-DIRECTORY` to the directory you would like to back up the server to.
  * We'll change the token value in the next section.
 
 Next, we need to register a bot on Discord.

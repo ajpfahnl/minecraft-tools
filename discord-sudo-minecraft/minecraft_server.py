@@ -43,6 +43,12 @@ class MinecraftServerAdmin():
             )
         self.server_process = p
         return p
+    
+    def backup_minecraft_server(self):
+        p = subprocess.run(["./backup.sh"], capture_output=True)
+        new_backup_dir = p.stdout.decode().strip()
+        stderr_str = p.stderr.decode().strip()
+        return new_backup_dir, stderr_str, p.returncode
 
     # Server properties functions
     def get_server_properties(self):

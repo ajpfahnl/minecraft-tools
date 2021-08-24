@@ -13,6 +13,7 @@ class SudoMinecraftClient(discord.Client):
         "run": (["$run", "$r"], "Run the Minecraft server."),
         "stop": (["$stop"], "Stop the Minecraft server."),
         "msg": (["$message", "$msg", "$m"], "Message the server. Format: `$m <message>`"),
+        "backup": (["$backup"], "Create server backup. Ensure that server is stopped."),
     }
     
     def __init__(self, mcsa: MCSA):
@@ -126,6 +127,24 @@ class SudoMinecraftClient(discord.Client):
             await p.wait()
             print("[COMPLETE] Stop server")
             await message.channel.send("Server stopped.")
+
+        '''
+        Create server backup
+        '''
+        if msg in self.options["backup"][0]:
+            print("[ATTEMPT] Create server backup")
+            if self.check_server_running():
+                print(f"[Error] Server is still running.")
+                await message.channel.send("Server is still running. Please stop the server and then back up.")
+                return
+            await message.channel.send("Attempting backup.")
+            new_backup_dir, stderr_str, returncode = self.mcsa.backup_minecraft_server()
+            if returncode != 0:
+                print(f"[ERROR] {stderr_str}")
+                await message.channel.send("Backup failed.")
+            else:
+                print(f"[COMPLETE] Created backup at {new_backup_dir}")
+                await message.channel.send("Backup succeeeded.")
         
         '''
         send message to Minecraft server
