@@ -11,6 +11,7 @@ class SudoMinecraftClient(discord.Client):
         "ipl": (["$ipl"], "Sends the current local IP of the Minecraft server."),
         "sp": (["$server properties", "$sp"], "Lists the current server properties."),
         "run": (["$run", "$r"], "Run the Minecraft server."),
+        "isrunning": (["$isrunning"], "Check if server is running."),
         "stop": (["$stop"], "Stop the Minecraft server."),
         "msg": (["$message", "$msg", "$m"], "Message the server. Format: `$m <message>`"),
         "backup": (["$backup"], "Create server backup. Ensure that server is stopped."),
@@ -109,6 +110,13 @@ class SudoMinecraftClient(discord.Client):
             print("[INFO] Print task started")
             await task_print
             await p.wait()
+
+        if msg in self.options["isrunning"][0]:
+            print("[ATTEMPT] Check server running")
+            if self.check_server_running():
+                await message.channel.send("Server is running.")
+            else:
+                await message.channel.send("Server is not running.")
         
         '''
         stop Minecraft server
