@@ -18,8 +18,7 @@ class SudoMinecraftClient(discord.Client):
     }
     
     def __init__(self, mcsa: MCSA):
-        super().__init__()
-        self.FIRST_LOGIN = False        
+        super().__init__()    
         self.mcsa = mcsa
         self.default_channel = None
 
@@ -56,9 +55,9 @@ class SudoMinecraftClient(discord.Client):
         return running
 
     async def on_ready(self):
-        if self.FIRST_LOGIN == True:
-            return
-        self.FIRST_LOGIN = True
+        pass
+
+    async def on_connect(self):
         self.set_default_channel()
         print(f"Logged in as {self.user}")
         await self.default_channel.send(
